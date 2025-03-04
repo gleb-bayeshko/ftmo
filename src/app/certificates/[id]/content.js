@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image.js";
 import { useEffect, useState } from "react";
 
 export default function CertificateContent({ id }) {
@@ -92,9 +93,16 @@ export default function CertificateContent({ id }) {
                 <div className="col-12">
                   <div className="portlet portlet--certificate text-center">
                     <div className="portlet__body certificates__image-wrapper certificates__share">
-                      <img
+                      {/* <img
                         src={`/api/certificates/${id}`}
                         className="img-fluid"
+                      /> */}
+                      <Image
+                        src={`/api/certificates/${id}`}
+                        alt={`Certificate ${id}`}
+                        width={2000}
+                        height={400}
+                        style={{ maxWidth: "100%", height: "auto" }}
                       />
                     </div>
                   </div>
